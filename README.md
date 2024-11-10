@@ -1,7 +1,12 @@
 ## TP_04_Algebra
 
+
 #Integrantes
-Claudio Emanuel Guzmeroli Parajon : Dueño del repo.
+Lucio Stefano Piccioni.
+Claudio Emanuel Guzmeroli Parajon.
 Ezequiel Prieto.
 Jonas Canaza.
-Lucio Stefano Piccioni.
+
+Dueño del Fork: Lucio Stefano Piccioni -> Yo.
+
+Grupo Numero: 4.
