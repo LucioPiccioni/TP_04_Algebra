@@ -63,13 +63,13 @@ public class AABB : MonoBehaviour
 
     public bool IsColliding(AABB Aabb)
     {
-        float halfWidthR1 = Aabb.GetSize().x;
-        float halfHeightR1 = Aabb.GetSize().y;
-        float halfProfR1 = Aabb.GetSize().z;
+        float halfWidthR1 = Aabb.GetSize().x / 2;
+        float halfHeightR1 = Aabb.GetSize().y / 2;
+        float halfProfR1 = Aabb.GetSize().z / 2;
 
-        float halfWidthR2 = GetSize().x;
-        float halfHeightR2 = GetSize().y;
-        float halfProfR2 = GetSize().z;
+        float halfWidthR2 = GetSize().x / 2;
+        float halfHeightR2 = GetSize().y / 2;
+        float halfProfR2 = GetSize().z / 2;
 
         float distanceX = Aabb.GetCenter().x - GetCenter().x;
         float distanceY = Aabb.GetCenter().y - GetCenter().y;

@@ -8,11 +8,8 @@ public class FrustrumCulling : MonoBehaviour
     [SerializeField] private float fov;
     [SerializeField] private float farDistance;
     [SerializeField] private float nearDistance;
-    [SerializeField] private float size;
     [SerializeField] private float tanAngle;
 
-    [SerializeField] private Vector3 sizeP1;
-    [SerializeField] private Vector3 sizeP2;
     [SerializeField] private Vector2 aspectRatio;
 
     [SerializeField] private List<GameObject> listObj = new List<GameObject>();
@@ -61,7 +58,6 @@ public class FrustrumCulling : MonoBehaviour
         Vector3 frontFar = nearDistance * transform.forward;
         Vector3 frontNear = farDistance * transform.forward;
 
-        tanAngle = Mathf.Deg2Rad * fov;
         float horizontal = nearDistance * Mathf.Tan(tanAngle * 0.5f);
         float vertical = horizontal * aspectRatio.y / aspectRatio.x;
 
@@ -121,6 +117,7 @@ public class FrustrumCulling : MonoBehaviour
         corners[7] = IntersectThreePlanes(frustumPlanes[0], frustumPlanes[3], frustumPlanes[5]); // Far Bottom Left
 
         Gizmos.color = Color.green;
+
         for (int i = 0; i < 4; i++)
         {
             Gizmos.DrawLine(corners[i], corners[(i + 1) % 4]);
@@ -149,5 +146,3 @@ public class FrustrumCulling : MonoBehaviour
         return intersectPoint;
     }
 }
-
-
