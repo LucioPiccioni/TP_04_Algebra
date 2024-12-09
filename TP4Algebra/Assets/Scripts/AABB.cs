@@ -44,7 +44,6 @@ public class AABB : MonoBehaviour
             maxV = Vector3.Max(maxV, transform.TransformPoint(vertices[i]));
         }
     }
-
     private void SetVertices()
     {
         Vector3 halfSize = GetSize() / 2;
@@ -59,31 +58,6 @@ public class AABB : MonoBehaviour
         boxVertices[5] = centerV + new Vector3(halfSize.x, halfSize.y, -halfSize.z);
         boxVertices[6] = centerV + new Vector3(halfSize.x, -halfSize.y, halfSize.z);
         boxVertices[7] = centerV + new Vector3(-halfSize.x, halfSize.y, -halfSize.z);
-    }
-
-    public bool IsColliding(AABB Aabb)
-    {
-        float halfWidthR1 = Aabb.GetSize().x / 2;
-        float halfHeightR1 = Aabb.GetSize().y / 2;
-        float halfProfR1 = Aabb.GetSize().z / 2;
-
-        float halfWidthR2 = GetSize().x / 2;
-        float halfHeightR2 = GetSize().y / 2;
-        float halfProfR2 = GetSize().z / 2;
-
-        float distanceX = Aabb.GetCenter().x - GetCenter().x;
-        float distanceY = Aabb.GetCenter().y - GetCenter().y;
-        float distanceZ = Aabb.GetCenter().z - GetCenter().z;
-
-        distanceX = Mathf.Abs(distanceX);
-        distanceY = Mathf.Abs(distanceY);
-        distanceZ = Mathf.Abs(distanceZ);
-
-        distanceX -= halfWidthR1 + halfWidthR2;
-        distanceY -= halfHeightR1 + halfHeightR2;
-        distanceZ -= halfProfR1 + halfProfR2;
-
-        return (distanceX < 0 && distanceY < 0 && distanceZ < 0);
     }
 
     public Vector3 GetCenter()
