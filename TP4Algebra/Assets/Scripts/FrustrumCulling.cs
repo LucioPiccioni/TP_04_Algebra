@@ -24,8 +24,8 @@ public class FrustrumCulling : MonoBehaviour
         float vertical = farDistance * Mathf.Tan(tanAngle * 0.5f);
         float horizontal = vertical * aspectRatio.y / aspectRatio.x;
 
-        MyPlane near = new MyPlane(transform.position + frontFar, transform.forward);
-        MyPlane far = new MyPlane(transform.position + frontNear, -transform.forward);
+        MyPlane far = new MyPlane(transform.position + frontFar, transform.forward);
+        MyPlane near = new MyPlane(transform.position + frontNear, -transform.forward);
         MyPlane right = new MyPlane(transform.position, Vector3.Cross(transform.up, frontNear + transform.right * horizontal));
         MyPlane left = new MyPlane(transform.position, Vector3.Cross(frontNear - transform.right * horizontal, transform.up));
         MyPlane top = new MyPlane(transform.position, Vector3.Cross(transform.right, frontNear - transform.up * vertical));
